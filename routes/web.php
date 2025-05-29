@@ -24,5 +24,10 @@ Route::controller(NoteController::class)->group(function() {
 
      Route::delete('/noteszy/destroy/{id}', 'destroy')->name('notes.destroy'); // hapus data
     //  Route::get('/noteszy/all', 'allnotes')->name('notes.all'); // lihat smua data
+
+    Route::get('/trash', 'trash')->name('notes.trash');
+    Route::get('/notes/restore/{id}', 'restore')->name('notes.restore');
+    Route::delete('/notes/forceDelete/{id}', 'forceDelete')->name('notes.forceDelete');
+
 });
 

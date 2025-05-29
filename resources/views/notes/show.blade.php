@@ -34,17 +34,17 @@
     max-width: 1000px;
     min-height: 400px;
     position: relative;
-    color: rgba(255, 255, 255, 0.8);
+    color: black;
   }
 
   .note-card h2 {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 1rem;
   }
 
   .note-card p {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: 400;
   }
 
@@ -96,7 +96,7 @@
 </style>
 
 {{-- Tombol Back --}}
-<a href="{{ route('dashboard') }}" class="back-btn">❌</a>
+<a href="{{ route('dashboard') }}" class="back-btn"><i class="fa-solid fa-x"></i></a>
 
 <div class="container-fluid">
   <div class="note-wrapper">
@@ -106,12 +106,12 @@
 
       {{-- Action Buttons --}}
       <div class="action-btns">
-        <a href="{{ route('notes.edit', $note->id) }}" class="edit-btn">✏️ Edit</a>
+        <a href="{{ route('notes.edit', $note->id) }}" class="edit-btn">Edit</a>
 
         <form id="delete-form" action="{{ route('notes.destroy', $note->id) }}" method="POST" style="display:inline;">
           @csrf
           @method('DELETE')
-          <button type="button" id="delete-button" class="delete-btn">🗑️ Delete</button>
+          <button type="button" id="delete-button" class="delete-btn">Delete</button>
         </form>
       </div>
     </div>

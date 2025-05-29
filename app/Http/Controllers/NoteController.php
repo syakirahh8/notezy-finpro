@@ -74,5 +74,26 @@ class NoteController extends Controller
     return redirect()->route('dashboard')->with('success', 'Note deleted successfully!');
     }
 
+    // Tampilkan catatan yang dihapus (Trash)
+public function trash() {
+    $trashedNotes = Note::onlyTrashed()->where('user_id', auth()->id())->get();
+    return view('notes.trash', compact('trashedNotes'));
+}
+
+// Restore catatan dari Trash
+public function restore($id) {
+    $note = Note::onlyTrashed()->where('user_id', auth()->id())->findOrFail($id);
+    $note->restore();
+    return redirect()->route('notes.trash')->with('success', 'Note restored successfully!');
+}
+
+// Hapus permanen catatan dari Trash
+public function forceDelete($id) {
+    $note = Note::onlyTrashed()->where('user_id', auth()->id())->findOrFail($id);
+    $note->forceDelete();
+    return redirect()->route('notes.trash')->with('success', 'Note permanently deleted!');
+}
+
+
 
 }

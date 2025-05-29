@@ -1,73 +1,163 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<!DOCTYPE html>
+<html lang="en">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Notezy Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+    .login-container {
+      position: relative;
+      background-color: #EC79A2;
+      padding: 4rem 3rem 3rem;
+      border-radius: 1rem;
+      width: 350px;
+      color: white;
+      text-align: center;
+      max-width: 400px;
+    }
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+    .mascot-head {
+      position: absolute;
+      top: -110px;
+      left: 100;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      padding-top: 2rem;
+    }
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    .mascot-head img {
+      height: 100px;
+    }
 
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
+    .mascot-feet {
+      position: absolute;
+      bottom: -85px;
+      left: 20px;
+    }
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+    h2 {
+      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+    label {
+      display: block;
+      font-weight: 700;
+      text-align: left;
+      margin-bottom: 0.2rem;
+      margin-top: 1rem;
+    }
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.6rem 0;
+      background-color: transparent !important;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      font-weight: 600;
+    }
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+    input:-webkit-autofill {
+    transition: background-color 9999s ease-in-out 0s;
+    -webkit-text-fill-color: white !important;
+}
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+    input::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+      background-color: transparent;
+    }
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
+    .btn-login {
+      background-color: #CFD72A;
+      color: black;
+      font-weight: 700;
+      border: none;
+      border-radius: 999px;
+      padding: 0.7rem 2rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      width: 100%;
+      margin-top: 0.5rem;
+      transition: all 0.3s ease;
+      border: 3px solid #CFD72A;
+    }
+
+    .btn-login:hover {
+      color: #CFD72A;
+      background-color: transparent;
+      border: 3px solid #CFD72A;
+    }
+
+    .links {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .links a {
+      color: inherit;
+      text-decoration: underline;
+      margin: 0 0.3rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <!-- Maskot di atas -->
+    <div class="mascot-head">
+      <img src="{{ asset('images/nono-setengah.svg')}}" alt="Mascot Head">
     </div>
-</div>
-@endsection
+
+    <h2>Welcome Back!</h2>
+
+    <form method="POST" action="{{ route('login') }}">
+        @csrf
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password"  placeholder="••••••••" required>
+
+      <div class="row mb-0">
+        <div class="col-md-8 offset-md-4">
+            <button type="submit" class="btn-login">
+                {{ __('Login') }}
+            </button>
+
+      <div class="links">
+        <a href="{{ route('register') }}">Don't have an account?</a>
+      </div>
+    </form>
+
+    <!-- Kaki maskot -->
+    <div class="mascot-feet">
+      <img src="{{ asset('images/nono-kaki.svg')}}" alt="Mascot Feet" style="height: 80px; width: auto;">
+    </div>
+  </div>
+
+</body>
+
+</html>
+

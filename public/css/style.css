@@ -1,74 +1,174 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-:root{
+:root {
     --primary: #5668B0;
     --secondary: #CFD72A;
     --pinky: #EC79A2;
     --blacky: #333;
 }
 
-    body {
-      background-color: #f3f3f3;
-      font-family: 'Segoe UI', sans-serif;
-    }
-
-    .btn-register {
-      background-color: var(--secondary);
-      color: black;
-      font-weight: 600;
-      border-radius: 999px;
-      text-decoration: none;
-    }
-
-    .btn-login-top {
-  background-color: var(--pinky);
-  color: black;
-  font-weight: 600;
-  border-radius: 999px;
-  text-decoration: none;
-  border: 2px solid transparent; /* Stabilkan ukuran */
-  transition: all 0.3s ease;
+/* welcome */
+body {
+    background-color: #f3f3f3;
+    font-family: 'Segoe UI', sans-serif;
+    overflow-x: hidden;
+}
+.btn-register {
+    background-color: var(--secondary);
+    color: black;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
 }
 
-.btn-login-top:hover {
-  background-color: transparent;
-  color: var(--pinky);
-  border-color: var(--pinky); /* Ganti warna border saja */
+.btn-login-top {
+    background-color: var(--pinky);
+    color: black;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+
 }
-    .btn-login-big {
-      padding: 8px 40px;
-      background-color: var(--pinky);
-      color: black;
-      font-size: 20px;
-      border-radius: 999px;
-      text-align: center;
-      text-decoration: none;
-    }
 
-    .hero-text h1 {
-      font-weight: 700;
-      font-size: 2.5rem;
-    }
+.btn-login-big {
+    padding: 8px 40px;
+    background-color: var(--pinky);
+    color: black;
+    font-size: 20px;
+    border-radius: 999px;
+    text-align: center;
+    text-decoration: none;
+}
 
-    .hero-text p {
-      font-size: 1.2rem;
-      color: #333;
-      margin-top: 1rem;
-      margin-bottom: 2rem;
-    }
+.hero-text h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
 
-    .mascot-img {
-      max-width: 300px;
-      height: auto;
-    }
+.hero-text p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
 
-    .top-bar {
-      padding: 20px 40px;
-    }
+.mascot-img {
+    max-width: 300px;
+    height: auto;
+}
 
-    @media (max-width: 768px) {
-      .hero-text {
+.top-bar {
+    padding: 20px 40px;
+}
+
+@media (max-width: 768px) {
+    .hero-text {
         text-align: center;
         margin-top: 2rem;
-      }
     }
+}
+
+/* end welcome */
+
+/* why choose us */
+.why-card {
+    border-radius: 0.75rem;
+    padding: 2rem 1.5rem;
+    color: white;
+    min-height: 420px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    margin-bottom: 6rem;
+    transition: transform 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+}
+
+.why-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.why-title {
+    font-weight: 700;
+    font-size: 1.50rem;
+    margin-bottom: 0.5rem;
+}
+
+.why-desc {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.bg-pink {
+    background-color: var(--pinky);
+}
+
+.bg-blue {
+    background-color: var(--primary);
+}
+
+.bg-yellow {
+    background-color: var(--secondary);
+    color: white;
+}
+/*end why choose us */
+
+
+/* footer */
+.footer-bg {
+    background-color: var(--primary);
+    border-radius: 1rem 1rem 0 0;
+    padding: 0rem 2rem 0rem;
+    color: white;
+    position: relative;
+    overflow: visible;
+    min-height: 350px;
+    z-index: 1;
+    margin-top: 16rem;
+}
+
+.footer-text {
+    color: white;
+    font-size: 3rem;
+}
+
+.footer-title {
+    font-weight: 700;
+    font-size: 8rem;
+    color: white;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.footer-lead {
+    margin-top: 0;
+    padding-top: 0;
+    line-height: 1.8;
+}
+
+.social-icons i {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+.copyright {
+    font-size: 0.9rem;
+    color: white;
+}
+
+.eno-img {
+    position: absolute;
+    bottom: 45px;
+    right: 2.10rem;
+    max-height: 500px;
+    object-fit: contain;
+    z-index: 2;
+}
+/* end footer */
