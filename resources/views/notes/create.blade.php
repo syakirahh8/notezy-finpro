@@ -6,205 +6,19 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 {{-- google font --}}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-{{-- Tambahin Bootstrap Icons --}}
+{{-- Bootstrap Icons --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+{{-- Quill CSS --}}
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 
-<style>
-  :root {
-    --primary: #5668B0;
-    --secondary: #CFD72A;
-    --pinky: #EC79A2;
-    --blacky: #333;
-  }
-
-  body {
-      font-family: "Poppins", sans-serif;
-    }
-
-    .note-wrapper {
-      background-color: #fff;
-      /* padding: 3rem; */
-      /* border-radius: 10px; */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: calc(100vh - 50px);
-    }
-
-    .note-card {
-      background-color: var(--pinky);
-      border-radius: 15px;
-      padding: 2.5rem;
-      margin-top: -10rem;
-      width: 100%;
-      max-width: 1000px;
-      min-height: 400px;
-      position: relative;
-    }
-
-    .note-card input,
-    .note-card textarea {
-      background-color: transparent;
-      border: none;
-      outline: none;
-      width: 100%;
-      transition: color 0.2s;
-    }
-
-    .note-card input {
-      font-size: 2.8rem;
-      font-weight: 700;
-    }
-
-    .note-card textarea {
-      font-size: 1.6rem;
-      font-weight: 400;
-      resize: none;
-      height: 140px;
-      margin-top: 1rem;
-    }
-
-    .note-card input::placeholder,
-    .note-card textarea::placeholder {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .note-card input,
-    .note-card textarea {
-      color: rgba(255, 255, 255, 0.5);
-    }
-
-    .note-card input.filled,
-    .note-card textarea.filled {
-      color: #000;
-    }
-
-    .save-btn {
-      background-color: var(--secondary);
-      border: 3px solid var(--secondary);
-      color: black;
-      border-radius: 2rem;
-      padding: 0.7rem 2rem;
-      position: absolute;
-      bottom: 1.5rem;
-      right: 1.5rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .save-btn:hover {
-      background-color: transparent;
-      border: 3px solid var(--secondary);
-      color: var(--secondary);
-    }
-
-      .back-btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 20px;
-    background-color: var(--primary);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .back-btn:hover {
-    background-color: var(--secondary);
-    color: black;
-  }
-
-     /* Tambahan tombol voice note */
-     .voice-btn {
-      background-color: transparent;
-      border: none;
-      color: var(--primary);
-      font-size: 1.5rem;
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      cursor: pointer;
-    }
-    .voice-btn:hover {
-      color: var(--secondary);
-    }
-    
-    /* Tambahan CSS untuk animasi titik-titik */
-.recording-dots {
-  display: inline-block;
-  margin-left: 5px;
-}
-
-.recording-dots .dot {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  margin: 0 1px;
-  background-color: #fff;
-  border-radius: 50%;
-  animation: blink 1s infinite alternate;
-}
-
-.recording-dots .dot:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.recording-dots .dot:nth-child(3) {
-  animation-delay: 0.4s;
-}
-
-@keyframes blink {
-  0% { opacity: 0.2; }
-  100% { opacity: 1; }
-}
-
-/* Dropdown Bahasa Style */
-.language-select {
-  background-color: rgba(255, 255, 255, 0.8);
-  color: var(--blacky);
-  border: 2px solid var(--secondary);
-  border-radius: 10px;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-select {
-  background-color: transparent !important;
-  border: none !important;
-  color: white !important;
-  font-weight: 600 !important;
-
-}
-
-.language-select:focus {
-  outline: none;
-  box-shadow: 0 0 5px var(--secondary);
-  border-color: var(--secondary);
-}
-
-.language-select option {
-  background-color: transparent;
-  color: var(--blacky);
-}
-
-.d-none {
-  display: none;
-}
-
-</style>
+<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 {{-- Tombol Back --}}
-<a href="{{ route('dashboard') }}" class="back-btn"><i class="fa-solid fa-x"></i></a>
+<a href="{{ route('dashboard') }}" class="back-btn" data-aos="fade-up"><i class="fa-solid fa-x"></i></a>
 
   <div class="container-fluid">
     <div class="note-wrapper">
-      <form action="{{ route('notes.store') }}" method="POST" class="note-card">
+      <form action="{{ route('notes.store') }}" method="POST" class="note-card" data-aos="fade-up" data-aos-delay="200">
         @csrf
         <input type="text" name="title" placeholder="Title" class="form-control-plaintext" required/>
         <textarea id="content" name="content" placeholder="Put anything here" class="form-control-plaintext" required></textarea>
@@ -290,6 +104,6 @@ if (SpeechRecognition) {
 }
   </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 @endsection

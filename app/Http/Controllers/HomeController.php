@@ -23,11 +23,17 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index() {
-        $notes = Note::where('user_id', auth()->id())
-              ->orderBy('created_at', 'desc')
-              ->get();
+        // Hanya ambil notes milik user yang login
+    $latestNotes = Note::where('user_id', auth()->id())
+                        ->orderBy('created_at', 'desc')
+                        ->take(3)
+                        ->get();
 
-        return view('notes.index', compact('notes'));
+    $allNotes = Note::where('user_id', auth()->id())
+                     ->orderBy('created_at', 'desc')
+                     ->get();
+
+    return view('notes.index', compact('latestNotes', 'allNotes'));
     }
 
 }

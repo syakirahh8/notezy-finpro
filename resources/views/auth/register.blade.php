@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Notezy Register</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+    {{-- data aos --}}
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    {{-- iconlink --}}
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -134,7 +138,7 @@
 </head>
 
 <body>
-    <div class="register-container mt-2">
+    <div class="register-container mt-2" data-aos="fade-up" data-aos-delay="100">
         <div class="mascot-head">
             <img src="{{ asset('images/nono-setengah.svg') }}" alt="Mascot Head">
         </div>
@@ -177,6 +181,13 @@
         </div>
     </div>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
 </body>
 
 </html>

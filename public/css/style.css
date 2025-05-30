@@ -1,174 +1,935 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 :root {
-    --primary: #5668B0;
-    --secondary: #CFD72A;
-    --pinky: #EC79A2;
-    --blacky: #333;
+   --primary: #5668B0;
+   --secondary: #CFD72A;
+   --pinky: #EC79A2;
 }
+
 
 /* welcome */
 body {
-    background-color: #f3f3f3;
-    font-family: 'Segoe UI', sans-serif;
-    overflow-x: hidden;
+   font-family: "Poppins", sans-serif !important;
+   overflow-x: hidden;
+   background-color: #ffffff !important;
 }
+
+
 .btn-register {
     background-color: var(--secondary);
-    color: black;
+    color: white !important;
     font-weight: 600;
     border-radius: 999px;
     text-decoration: none;
+    border: 2px solid var(--secondary);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.btn-register:hover {
+    background-color: transparent;
+    color: var(--secondary) !important;
+    border: 2px solid var(--secondary);
+    transform: scale(1.05);
+}
+
+.btn-user {
+    background-color: var(--secondary);
+    color: white !important;
+    font-weight: 600;
+    border-radius: 999px;
+    text-decoration: none;
+    border: 2px solid var(--secondary);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
 
 .btn-login-top {
     background-color: var(--pinky);
-    color: black;
+    color: white !important;
     font-weight: 600;
     border-radius: 999px;
     text-decoration: none;
+    border: none;
+    border: 2px solid var(--pinky);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
+.btn-login-top:hover {
+    background-color: transparent;
+    color: var(--pinky) !important;
+    border: 2px solid var(--pinky);
+    transform: scale(1.05);
 }
 
 .btn-login-big {
     padding: 8px 40px;
     background-color: var(--pinky);
-    color: black;
+    color: white;
     font-size: 20px;
     border-radius: 999px;
     text-align: center;
     text-decoration: none;
+    border: 2px solid var(--pinky);
+    transition: background-color 0.3s ease, transform 0.3s ease !important;
 }
+
+.btn-login-big:hover {
+    background-color: transparent;
+    border: 2px solid var(--pinky);
+    color: var(--pinky) !important;
+    transform: scale(1.05) !important;
+}
+
 
 .hero-text h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
+   font-weight: 700;
+   font-size: 2.5rem;
 }
+
 
 .hero-text p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+   font-size: 1.2rem;
+   color: #333;
+   margin-top: 1rem;
+   margin-bottom: 2rem;
 }
+
 
 .mascot-img {
-    max-width: 300px;
-    height: auto;
+   max-width: 300px;
+   height: auto;
 }
+
 
 .top-bar {
-    padding: 20px 40px;
+   padding: 20px 40px;
 }
 
+
 @media (max-width: 768px) {
-    .hero-text {
-        text-align: center;
-        margin-top: 2rem;
-    }
+   .hero-text {
+       text-align: center;
+       margin-top: 2rem;
+   }
 }
+
 
 /* end welcome */
 
+
 /* why choose us */
 .why-card {
-    border-radius: 0.75rem;
-    padding: 2rem 1.5rem;
-    color: white;
-    min-height: 420px;
-    max-width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    margin-bottom: 6rem;
-    transition: transform 0.3s ease;
+   border-radius: 0.75rem;
+   padding: 2rem 1.5rem;
+   color: white;
+   min-height: 420px;
+   max-width: 300px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5rem;
+   margin-bottom: 6rem;
+   transition: transform 0.3s ease;
 }
+
 
 .why-card:hover {
-    transform: translateY(-5px);
+   transform: translateY(-5px);
 }
+
 
 .why-icon {
-    font-size: 5rem;
-    margin-bottom: 1rem;
+   font-size: 5rem;
+   margin-bottom: 1rem;
 }
+
 
 .why-title {
-    font-weight: 700;
-    font-size: 1.50rem;
-    margin-bottom: 0.5rem;
+   font-weight: 700;
+   font-size: 1.50rem;
+   margin-bottom: 0.5rem;
 }
+
 
 .why-desc {
-    font-size: 1rem;
-    opacity: 0.9;
+   font-size: 1rem;
+   opacity: 0.9;
 }
+
 
 .bg-pink {
-    background-color: var(--pinky);
+   background-color: var(--pinky);
 }
+
 
 .bg-blue {
-    background-color: var(--primary);
+   background-color: var(--primary);
 }
 
+
 .bg-yellow {
-    background-color: var(--secondary);
-    color: white;
+   background-color: var(--secondary);
+   color: white;
 }
 /*end why choose us */
 
 
+
+
 /* footer */
 .footer-bg {
-    background-color: var(--primary);
-    border-radius: 1rem 1rem 0 0;
-    padding: 0rem 2rem 0rem;
-    color: white;
-    position: relative;
-    overflow: visible;
-    min-height: 350px;
-    z-index: 1;
-    margin-top: 16rem;
+   background-color: var(--primary);
+   border-radius: 1rem 1rem 0 0;
+   padding: 0rem 2rem 0rem;
+   color: white;
+   position: relative;
+   overflow: visible;
+   min-height: 350px;
+   z-index: 1;
+   margin-top: 16rem;
 }
+
 
 .footer-text {
-    color: white;
-    font-size: 3rem;
+   color: white;
+   font-size: 3rem;
 }
+
 
 .footer-title {
-    font-weight: 700;
-    font-size: 8rem;
-    color: white;
-    font-weight: bold;
-    line-height: 1.2;
+   font-weight: 700;
+   font-size: 8rem;
+   color: white;
+   font-weight: bold;
+   line-height: 1.2;
 }
+
 
 .footer-lead {
-    margin-top: 0;
-    padding-top: 0;
-    line-height: 1.8;
+   margin-top: 0;
+   padding-top: 0;
+   line-height: 1.8;
 }
+
 
 .social-icons i {
-    font-size: 1.5rem;
-    margin-right: 1rem;
-    color: white;
-    cursor: pointer;
+   font-size: 1.5rem;
+   margin-right: 0.3rem;
+   color: white;
+   cursor: pointer;
+   transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.social-icons i:hover {
+    transform: scale(1.05);
+    color: var(--secondary);
+}
+
 
 .copyright {
-    font-size: 0.9rem;
-    color: white;
+   font-size: 0.9rem;
+   color: white;
 }
 
+
 .eno-img {
-    position: absolute;
-    bottom: 45px;
-    right: 2.10rem;
-    max-height: 500px;
-    object-fit: contain;
-    z-index: 2;
+   position: absolute;
+   bottom: 45px;
+   right: 2.10rem;
+   max-height: 500px;
+   object-fit: contain;
+   z-index: 2;
 }
 /* end footer */
+
+
+/* user dashboard */
+
+
+.add-note-btn {
+   font-size: 28px;
+   color: #fff;
+   background-color: var(--primary);
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.add-note-btn:hover {
+   background-color: var(--secondary);
+   transform: scale(1.05);
+}
+
+
+.trash-btn {
+   font-size: 28px;
+   color: #fff;
+   background-color: var(--secondary);
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.trash-btn:hover {
+   background-color: var(--primary);
+   transform: scale(1.05);
+}
+
+
+.sidebar {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 2rem;
+   gap: 1.5rem;
+   box-sizing: border-box;
+   background-color: white;
+   padding: 2rem 1rem;
+   width: 250px;
+ }
+
+
+ .logo {
+   height: 100px;
+   display: inline-block;
+ }
+
+
+ .add-btn {
+   background-color: var(--primary);
+   color: black;
+   font-size: 24px;
+   border: none;
+   border-radius: 50%;
+   width: 45px;
+   height: 45px;
+   text-align: center;
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .love-btn-no-bg {
+  background: transparent;
+  border: none;            
+  color: white;            
+  font-size: 20px;         
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.love-btn-no-bg:hover {
+  transform: scale(1.1);  
+  color: var(--secondary); 
+}
+
+.love-btn-no-bg i {
+  pointer-events: none;
+}
+
+
+ .button-view {
+   background-color: var(--primary);
+   color: white;
+   font-size: 25px;
+   border: none;
+   border-radius: 50%;
+   width: 45px;
+   height: 45px;
+   text-align: center;
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+   font-size: 23px;
+ }
+
+
+ .button-view:hover {
+   background-color: var(--secondary);
+   transform: scale(1.05);
+   color: white;
+ }
+  .card {
+     background-color: var(--pinky);
+     color: black;
+     max-width: 300px;
+     max-height: 300px;
+     overflow: hidden;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 1rem;
+     box-sizing: border-box;
+ }
+
+
+ .card-title {
+     font-size: 25px;
+     font-weight: 600;
+     white-space: nowrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+ }
+
+
+ .card-text {
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   -webkit-box-orient: vertical;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+
+
+ .note-date p {
+   color: white;
+   font-size: 12px;
+   font-weight: 500;
+   white-space: nowrap;
+   max-width: 140px;
+ }
+
+
+ .main-content {
+   padding: 2rem;
+   flex-grow: 1;
+   padding: 2rem;
+   flex-grow: 1;
+ }
+
+
+ .note-item {
+    background: var(--secondary);
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 200px;
+    margin: 0 auto;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .note-item .note-date {
+    margin-top: 0;
+    color: white;
+  }
+
+  .note-title {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  .note-title:hover {
+    text-decoration: underline;
+  }
+
+  .note-date {
+    color: white;
+    font-size: 0.85rem;
+    margin-top: 0.4rem;
+  }
+
+  .empty-message {
+    color: #999;
+    font-style: italic;
+    padding-top: 3rem;
+  }
+
+
+/* create */
+
+.fav-btn {
+   font-size: 28px;
+   color: #fff;
+   background-color: var(--pinky);
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.fav-btn:hover {
+   background-color: var(--primary);
+   transform: scale(1.05);
+}
+
+.fav-btn i {
+  /* font-size: x; */
+  line-height: 1;
+}
+
+.note-wrapper {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: calc(100vh - 50px);
+ }
+
+
+ .note-card {
+   background-color: var(--pinky);
+   border-radius: 15px;
+   padding: 2.5rem;
+   margin-top: -10rem;
+   width: 100%;
+   max-width: 1000px;
+   min-height: 400px;
+   position: relative;
+   color: white;
+ }
+
+
+ .note-card input,
+ .note-card textarea {
+   background-color: transparent;
+   border: none;
+   outline: none;
+   width: 100%;
+   transition: color 0.2s;
+ }
+
+
+ .note-card input {
+   font-size: 2.8rem;
+   font-weight: 700;
+ }
+
+
+ .note-card textarea {
+   font-size: 1.6rem;
+   font-weight: 400;
+   resize: none;
+   height: 140px;
+   margin-top: 1rem;
+ }
+
+
+ .note-card input::placeholder,
+ .note-card textarea::placeholder {
+   color: rgba(255, 255, 255, 0.5);
+ }
+
+
+ .note-card input,
+ .note-card textarea {
+   color: rgba(255, 255, 255, 0.5);
+ }
+
+
+ .note-card input.filled,
+ .note-card textarea.filled {
+   color: white;
+ }
+
+
+ .save-btn {
+   background-color: var(--secondary);
+   border: 3px solid var(--secondary);
+   color: black;
+   border-radius: 2rem;
+   padding: 0.7rem 2rem;
+   position: absolute;
+   bottom: 1.5rem;
+   right: 1.5rem;
+   font-weight: 600;
+   transition: all 0.3s ease;
+ }
+
+
+ .save-btn:hover {
+   background-color: transparent;
+   border: 3px solid var(--secondary);
+   color: var(--secondary);
+ }
+
+
+   .back-btn {
+ display: inline-flex;
+ justify-content: center;
+ align-items: center;
+ width: 40px;
+ height: 40px;
+ border-radius: 50%;
+ margin: 20px;
+ background-color: var(--primary);
+ color: white;
+ text-decoration: none;
+ font-weight: bold;
+ transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.back-btn:hover {
+ background-color: var(--secondary);
+ transform: scale(1.05);
+}
+
+
+  .voice-btn {
+   background-color: transparent;
+   border: none;
+   color: var(--primary);
+   font-size: 1.5rem;
+   position: absolute;
+   bottom: 1.5rem;
+   left: 1.5rem;
+   cursor: pointer;
+ }
+ .voice-btn:hover {
+   color: var(--secondary);
+ }
+
+
+.recording-dots {
+display: inline-block;
+margin-left: 5px;
+}
+
+
+.recording-dots .dot {
+display: inline-block;
+width: 5px;
+height: 5px;
+margin: 0 1px;
+background-color: #fff;
+border-radius: 50%;
+animation: blink 1s infinite alternate;
+}
+
+
+.recording-dots .dot:nth-child(2) {
+animation-delay: 0.2s;
+}
+.recording-dots .dot:nth-child(3) {
+animation-delay: 0.4s;
+}
+
+
+@keyframes blink {
+0% { opacity: 0.2; }
+100% { opacity: 1; }
+}
+
+
+.language-select {
+background-color: rgba(255, 255, 255, 0.8);
+color: var(--blacky);
+border: 2px solid var(--secondary);
+border-radius: 10px;
+padding: 0.2rem 0.5rem;
+font-size: 0.9rem;
+font-weight: 600;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+
+select {
+background-color: transparent !important;
+border: none !important;
+color: white !important;
+font-weight: 600 !important;
+
+
+}
+
+
+.language-select:focus {
+outline: none;
+box-shadow: 0 0 5px var(--secondary);
+border-color: var(--secondary);
+}
+
+
+.language-select option {
+background-color: transparent;
+color: black !important;
+}
+
+
+.d-none {
+display: none;
+}
+
+/* bold, italic, underline */
+/* Hapus border & bg transparan */
+.ql-toolbar.ql-snow {
+  border: none !important;
+  background: transparent !important;
+}
+.ql-container.ql-snow {
+  border: none !important;
+  background: transparent !important;
+}
+
+/* Label dropdown & semua icon toolbar (B, I, U, dsb) jadi hitam */
+.ql-toolbar .ql-picker-label,
+.ql-toolbar .ql-picker-label.ql-active,
+.ql-toolbar .ql-formats button,
+.ql-toolbar .ql-formats .ql-picker-label {
+  color: var(--blacky) !important;
+  fill: var(--blacky) !important;
+}
+
+/* Hover & aktif di toolbar juga hitam */
+.ql-toolbar .ql-formats button:hover,
+.ql-toolbar .ql-formats .ql-picker-label:hover {
+  color: var(--blacky) !important;
+  fill: var(--blacky) !important;
+}
+
+/* Icon dropdown (▼) jadi hitam */
+.ql-toolbar .ql-picker-label::before,
+.ql-toolbar .ql-picker-label::after {
+  color: var(--blacky) !important;
+  border-color: var(--blacky) !important;
+}
+
+/* Dropdown list item tetap ungu */
+.ql-toolbar .ql-picker-options .ql-picker-item {
+  color: var(--primary) !important;
+}
+.ql-toolbar .ql-picker-options .ql-picker-item:hover {
+  background-color: rgba(86, 104, 176, 0.1);
+}
+
+/* Area editor: teks putih! */
+.ql-editor {
+  color: white !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  min-height: 120px;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+/* Placeholder style: putih transparan */
+.ql-editor.ql-blank::before {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-weight: 400;
+}
+
+.form-select option {
+    background: var(--blacky);
+    color: white;
+}
+  .ql-editor.ql-blank::before {
+    font-style: normal !important; /* Hilangin italic */
+    color: #999; /* Biar placeholder-nya abu2 */
+  }
+
+
+/* edit */
+
+
+input.edit,
+textarea.edit {
+ background-color: transparent;
+ border: none;
+ outline: none;
+ width: 100%;
+ color: white !important;
+}
+
+/* show */
+/* show */
+
+.note-card h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .note-card p {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+
+  .action-btns {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    background-color: var(--secondary);
+    border: none;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  .edit-btn:hover,
+  .delete-btn:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: scale(1.05);
+    text-decoration: none;
+  }
+
+ /* delete */
+
+ .trash-container {
+   max-width: 600px;
+   margin: 2rem auto;
+ }
+
+
+ .trash-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 2rem;
+ }
+
+
+ .btn-back {
+   font-size: 28px;
+   color: #fff;
+   background-color: var(--primary);
+   border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-decoration: none;
+   transition: background-color 0.3s ease, transform 0.3s ease;
+ }
+ .btn-back:hover {
+   background-color: var(--secondary);
+   color: white;
+   border: 2px solid var(--secondary);
+ }
+
+
+ .trash-title {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   font-size: 1.6rem;
+   font-weight: 700;
+   color: var(--primary);
+ }
+
+
+ .trash-title i {
+   font-size: 1.6rem;
+ }
+
+
+ .trash-card {
+   background-color: var(--pinky);
+   border-radius: 10px;
+   margin-bottom: 1rem;
+   padding: 1rem;
+   color: white;
+ }
+
+
+ .trash-card h5 {
+   margin: 0;
+   font-weight: 600;
+   color: white;
+ }
+
+
+ .trash-card p {
+   margin: 0.2rem 0;
+   color: white;
+ }
+
+
+ .note-date {
+   color: #666;
+   font-size: 0.8rem;
+   font-style: italic;
+ }
+
+
+ .trash-buttons .btn {
+   border-radius: 20px;
+   font-weight: 600;
+   transition: all 0.3s ease;
+ }
+
+
+ .btn-restore {
+  background-color: var(--secondary);
+  color: white;
+  border: 2px solid var(--secondary);
+  transition: all 0.3s ease;
+  border-radius: 50px;
+  font-weight: 600;
+ }
+ .btn-restore:hover {
+  background-color: transparent;
+  color: var(--secondary);
+  border: 2px solid var(--secondary);
+}
+
+
+ .btn-delete {
+  background-color: var(--primary);
+  color: white;
+  border: 2px solid var(--primary);
+  transition: all 0.3s ease;
+ }
+ .btn-delete:hover {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+ }
+
+
+
+
+ .empty-message {
+   color: #999;
+   font-style: italic;
+ }
+
+
+ .container-fluid {
+ padding: 0 2rem;
+}
+
+
+.trash-card {
+ width: 100%;
+ border-radius: 10px;
+ margin: 1rem 0;
+ background-color: var(--pinky);
+ color: black;
+ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+ padding: 1rem;
+}

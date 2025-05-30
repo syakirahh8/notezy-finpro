@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Note extends Model
 {
     use SoftDeletes;
-    protected $fillable = ['title', 'content', 'user_id'];
+    protected $fillable = [
+        'title',
+        'content',
+        'user_id',
+        'favorite',
+    ];
 }

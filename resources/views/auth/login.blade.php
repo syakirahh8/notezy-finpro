@@ -7,12 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notezy Login</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  {{-- data aos --}}
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    {{-- iconlink --}}
+    <link rel="icon" href="{{ asset('favicon.svg') }}" type="image/x-icon">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #ffffff;
+      background-color: white;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -123,7 +127,7 @@
 </head>
 
 <body>
-  <div class="login-container">
+  <div class="login-container" data-aos="fade-up">
     <!-- Maskot di atas -->
     <div class="mascot-head">
       <img src="{{ asset('images/nono-setengah.svg')}}" alt="Mascot Head">
@@ -157,6 +161,13 @@
     </div>
   </div>
 
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
 </body>
 
 </html>

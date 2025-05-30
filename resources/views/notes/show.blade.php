@@ -2,104 +2,19 @@
 
 @section('content')
 
+  {{-- bootstrap css --}}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+{{-- google font --}}
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-<style>
-  :root {
-    --primary: #5668B0;
-    --secondary: #CFD72A;
-    --pinky: #EC79A2;
-    --blacky: #333;
-  }
-
-  body {
-    font-family: "Poppins", sans-serif;
-  }
-
-  .note-wrapper {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 50px);
-  }
-
-  .note-card {
-    background-color: var(--pinky);
-    border-radius: 15px;
-    padding: 2.5rem;
-    margin-top: -10rem;
-    width: 100%;
-    max-width: 1000px;
-    min-height: 400px;
-    position: relative;
-    color: black;
-  }
-
-  .note-card h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-
-  .note-card p {
-    font-size: 1.6rem;
-    font-weight: 400;
-  }
-
-  .action-btns {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    display: flex;
-    gap: 0.5rem;
-  }
-
-  .edit-btn,
-  .delete-btn {
-    background-color: var(--secondary);
-    border: none;
-    color: black;
-    padding: 0.5rem 1rem;
-    border-radius: 2rem;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  .edit-btn:hover,
-  .delete-btn:hover {
-    background-color: transparent;
-    border: 2px solid var(--secondary);
-    color: var(--secondary);
-  }
-
-  .back-btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin: 20px;
-    background-color: var(--primary);
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .back-btn:hover {
-    background-color: var(--secondary);
-    color: black;
-  }
-</style>
-
+{{-- Tambahin Bootstrap Icons --}}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+{{-- css sendiri --}}
+  <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 {{-- Tombol Back --}}
-<a href="{{ route('dashboard') }}" class="back-btn"><i class="fa-solid fa-x"></i></a>
+<a href="{{ route('dashboard') }}" class="back-btn" data-aos="fade-up"><i class="fa-solid fa-x" data-aos="fade-up"></i></a>
 
 <div class="container-fluid">
-  <div class="note-wrapper">
+  <div class="note-wrapper" data-aos="fade-up" data-aos-delay="200">
     <div class="note-card">
       <h2>{{ $note->title }}</h2>
       <p>{{ $note->content }}</p>
